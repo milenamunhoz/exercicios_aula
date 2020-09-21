@@ -1,0 +1,94 @@
+<!--
+    EXERCICIO DA AULA 5
+    MILENA MUNHOZ DE BARROS - RA: 84846 - ENGENHARIA DA COMPUTAÇÃO
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Milena" />
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+
+        <title>Aula 5 - jQuery</title>
+    </head>
+
+    <body> 
+        
+       
+        <div id="cabecalho" class="header">
+            <h1 style="text-align: center;">Aula 5 - jQuery</h1>
+            <p style="text-align: center;" class="texto" id="descricao_texto">Nessa página há uma caixa de texto, inserção de texto, link da home do LinkeIn, cálculo da sequência de Fibonacci e um botão para alterar a página de destino via script.</p>
+        </div>
+
+            <form id=inserir>
+
+                    <div class="caixatexto">
+                    <br><h3>Caixa de texto</h3>
+                        <p class="texto" id="caixa_texto"><textarea rows=5 cols=50>Colocar texto</textarea></p>
+                    </div>
+
+                    <div class="inserirtexto">    
+                        <br><h3>Inserção de texto</h3>                        
+                        <p class="texto" id="inserir_texto">Inserir texto: <input type="text"> </p>                        
+                        <p><input type="submit" value="Inserir"> </p>
+                    </div>
+
+                    
+            </form>
+
+            <br>
+            
+            <p class="titulo" id="h1"><h1 style="text-align: center;">Título em h1</p></h1>
+
+            <a href="https://br.linkedin.com" target="_blank">Home do LinkedIn</a></td>
+            
+            <br>
+            <p class="seq_fib" id="fibonacci"><h3 style="text-align: left;">Sequência de Fibonacci</h3></p>
+
+            <p class="seq_fib" id="qtd_termos">Quantidade de termos: <input id="numero" type="number"> <br /></p>
+            <button onclick="fibonacci()">  Calcular  </button><br />
+
+        <div id='resposta'></div>
+
+        <script>
+        function fibonacci(){
+            var termo = parseInt(document.getElementById('numero').value);
+            var resposta = document.getElementById('resposta');
+            var penultimo=0, ultimo=1;
+            var numero;
+          
+            if(termo<=2)
+             numero = termo-1;
+            else{
+             count=3;
+             while(count<=termo){
+              numero= ultimo + penultimo;
+              penultimo = ultimo;
+              ultimo=numero;
+              count++;
+             }
+            }
+            
+            resposta.innerHTML=numero;
+      
+          }
+        </script>
+      
+        </div>
+
+        <br>
+        <button onclick="redirecionar()">Alterar página de destino</button>
+
+    <script>
+       function redirecionar() {
+          window.location.href = "http://uniso.br";
+       }
+    </script>
+
+    </body>
+</html>
+
+
